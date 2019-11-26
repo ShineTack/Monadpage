@@ -7,12 +7,12 @@ def start(message):
     print(message.chat.id)
     bot.send_message(message.chat.id, "Hi")
 
-def repeat(name, phone, email, telegram=""):
+def repeat(name, phone, email, message):
     text = f"""
 ФИО : {name}
 Телефон : {phone} 
 Email : {email}
-Telegram : {telegram} 
+Message : {message} 
     """
     bot.send_message('-1001385429241', text)
 
