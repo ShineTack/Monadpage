@@ -16,3 +16,5 @@ pip install drf-extensions
 ```bash
 python manage.py runserver
 ```
+
+page will be in `http://localhost:8000/main/`
