@@ -20,7 +20,7 @@ i::before {
   border-radius: 100%;
 }
 
-#main {
+#mainn {
   background: url(assets/backgrounds/star.png) top left -125px no-repeat,
     url(assets/backgrounds/main_left.svg) top 550px left -125px no-repeat,
     url(assets/backgrounds/main_right.svg) top 150px right no-repeat;
@@ -113,6 +113,7 @@ i::before {
   position: absolute;
   top: 42px;
   right: 29px;
+  z-index: 1000;
 }
 
 .page__content__number span {
@@ -125,6 +126,10 @@ i::before {
   width: 100%;
   padding: 236px 84px 123px 84px;
   background-size: cover;
+}
+
+#main {
+  padding: 0;
 }
 
 body h1 {
@@ -158,14 +163,20 @@ body p {
 
 .main__together__learn {
   text-align: center;
-  margin-top: 272px;
+  margin-top: 60px;
 }
 
 .main__together__learn p {
-  margin: 0;
+  width: fit-content;
+  margin: 0 auto;
   font-size: 23px;
   line-height: 30px;
   color: rgba(255, 255, 255, 0.69);
+}
+
+.learn__trigger {
+  cursor: pointer;
+  display: inline-block;
 }
 
 .learn__arrow {
@@ -174,24 +185,18 @@ body p {
   opacity: 0;
 }
 
-.learn__arrow__label {
-  cursor: pointer;
-  display: block;
-  margin: auto;
-}
-
-.learn__arrow__label img {
+#main img {
   transition: 0.5s;
 }
 
-input[name='learn__arrow'] ~ .learn__arrow__label img {
+#main .collapsed img {
   transform: rotateX(0deg);
   -o-transform: rotateX(0deg);
   -ms-transform: rotateX(0deg);
   -webkit-transform: rotateX(0deg);
 }
 
-input[name='learn__arrow']:checked ~ .learn__arrow__label img {
+#main img {
   transform: rotateX(180deg);
   -o-transform: rotateX(180deg);
   -ms-transform: rotateX(180deg);
@@ -199,15 +204,13 @@ input[name='learn__arrow']:checked ~ .learn__arrow__label img {
 }
 
 .main__together__welcome {
-  width: 95%;
-  padding-top: 155px;
-  padding-bottom: 154px;
+  padding:155px 84px;
   text-align: center;
   transform-origin: top center;
   transition: 0.5s;
 }
 
-.main__together__learn .collapsed {
+.collapsed .main__together__welcome {
   padding: 0;
   transform: scaleY(0);
 }
@@ -222,6 +225,53 @@ input[name='learn__arrow']:checked ~ .learn__arrow__label img {
   margin-top: 35px;
   font-size: 22px;
   line-height: 27px;
+}
+
+.main__discount {
+  padding: 234px 25% 144px 84px;
+  background: no-repeat url(assets/main__slides/discount.svg),
+    linear-gradient(142.94deg, #0755CC 0%, #02224D 79.15%);
+  background-size: contain;
+}
+
+.main__discount h1 {
+  padding: 0;
+  width: auto;
+  font-size: 75px;
+  line-height: 90px;
+}
+
+.main__discount p {
+  padding-top: 27px;
+  font-size: 30px;
+  line-height: 38px;
+  width: 65%;
+}
+
+.main__discount span {
+  font-weight: 600;
+}
+
+.main__discount__button {
+  border: 4px solid white;
+  border-radius: 50px;
+  padding: 18px 80px;
+  margin-top: 21px;
+  font-size: 20px;
+  background: none;
+}
+
+.main__discount__button:active,
+.main__discount__button:focus {
+  outline: none;
+}
+
+.main__discount__button:hover {
+  box-shadow: 0 0 5px white;
+}
+
+.main__advantages {
+  padding: 0 84px;
 }
 
 .main__advantages__container__first,
@@ -371,6 +421,8 @@ input[name='learn__arrow']:checked ~ .learn__arrow__label img {
   display: flex;
   justify-content: space-between;
   margin-top: 93px;
+  padding: 0 84px;
+  padding-bottom: 134px;
 }
 
 .withus > div {
@@ -612,7 +664,7 @@ footer {
 }
 
 @media screen and (max-width: 1366px) {
-  #main {
+  #mainn {
     background: url(assets/backgrounds/star.png) top left -125px no-repeat,
     url(assets/backgrounds/main_left.svg) top 550px left -125px no-repeat,
     url(assets/backgrounds/main_right.svg) top 150px right no-repeat;
@@ -637,7 +689,7 @@ footer {
 }
 
 @media screen and (max-width: 1280px) {
-  #main {
+  #mainn {
     background: url(assets/backgrounds/star.png) top left -125px no-repeat,
       url(assets/backgrounds/main_left.svg) top 550px left -125px no-repeat,
       url(assets/backgrounds/main_right.svg) top 150px right -100px no-repeat;
@@ -718,7 +770,7 @@ footer {
 }
 
 @media screen and (max-width: 800px) {
-  #main {
+  #mainn {
     background: url(assets/backgrounds/star.png) top left -125px no-repeat,
       url(assets/backgrounds/main_left.svg) top 550px left -125px no-repeat,
       url(assets/backgrounds/main_right.svg) top 150px right -230px no-repeat;
@@ -733,6 +785,11 @@ footer {
   body h1 {
     font-size: 40px;
     line-height: 45px;
+  }
+
+  .main__discount p,
+  .main__discount h1 {
+    width: 100%;
   }
 
   .withus > div > h1 {
@@ -790,6 +847,14 @@ footer {
     padding: 110px 10px 123px 10px;
   }
 
+  .withus,
+  .main__advantages,
+  .main__discount,
+  .main__together__welcome {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
   .page__menu__tabs__tab {
     width: 75px;
   }
@@ -800,14 +865,6 @@ footer {
 
   .main__together {
     text-align: center;
-  }
-
-  .main__together h1 {
-    width: 100%;
-  }
-
-  .main__together p {
-    width: 70%;
   }
 
   .main__together__learn {
