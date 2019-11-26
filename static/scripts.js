@@ -21,8 +21,8 @@ menuButtons.forEach(function (button, key) {
 });
 
 // Learn
-const arrow = document.querySelector('.learn__arrow');
-const collapsingBlock = document.querySelector('.main__together__welcome');
+const arrow = document.querySelector('.learn__trigger');
+const collapsingBlock = document.querySelector('.main__together__learn');
 
 arrow.addEventListener('click', function () {
     if (collapsingBlock.classList.contains('collapsed')) {
@@ -33,7 +33,7 @@ arrow.addEventListener('click', function () {
 });
 
 // services
-const servicesButtons = document.querySelectorAll('.services__buttons');
+const servicesButtons = document.querySelectorAll('.services__buttons, .main__discount__button');
 
 servicesButtons.forEach(function (button) {
     button.addEventListener('click', function () {
@@ -57,7 +57,7 @@ form.addEventListener('submit', function (e) {
     var message = document.getElementById('message');
     //var url = "http://37eade17.ngrok.io/main/";
     var method = 'POST';
-    var data = JSON.stringify({name: name.value, tel: tel.value, message: message.value, email: email.value});
+    var data = JSON.stringify({ name: name.value, tel: tel.value, message: message.value, email: email.value });
     customerUpdater.open(method, form.action, true);
     customerUpdater.setRequestHeader('Content-Type', 'application/json');
     customerUpdater.send(data);
