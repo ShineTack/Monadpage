@@ -21,7 +21,7 @@ class Main(APIView):
     def post(self, request, format=None):
         serializer = CustomerSerializer(data=request.data)
         if serializer.is_valid():
-            reapet(name=serializer.data['name'], phone=serializer.data['tel'],
+            repeat(name=serializer.data['name'], phone=serializer.data['tel'],
                    email=serializer.data['email'], message=serializer.data['message'])
             serializer.save()
             #Response(status=status.HTTP_200_OK)
