@@ -6,6 +6,7 @@ from rest_framework.viewsets import ModelViewSet
 from rest_framework import status
 from .serializers import CustomerSerializer
 from .models import Customer
+from .bot import repeat
 
 
 class CustomerViewSet(ModelViewSet):
@@ -20,6 +21,8 @@ class Main(APIView):
     def post(self, request, format=None):
         serializer = CustomerSerializer(data=request.data)
         if serializer.is_valid():
+            reapet(name=serializer.data['name'], phone=serializer.data['tel'],
+                   email=serializer.data['email'], message=serializer.data['message'])
             serializer.save()
             #Response(status=status.HTTP_200_OK)
             return Response(serializer.data, status=status.HTTP_200_OK)
