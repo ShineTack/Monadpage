@@ -485,6 +485,10 @@ body p {
   margin-top: 26px;
 }
 
+#about .unit__info {
+  width: 70%;
+}
+
 #about .unit__info > * {
   width: 70%;
 }
