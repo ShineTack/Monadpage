@@ -24,7 +24,6 @@ class Main(APIView):
             repeat(name=serializer.validated_data['name'], phone=serializer.validated_data['tel'],
                    email=serializer.validated_data['email'], message=serializer.validated_data['message'])
             serializer.save()
-            #Response(status=status.HTTP_200_OK)
             return Response(serializer.data, status=status.HTTP_200_OK)
         else:
             return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)

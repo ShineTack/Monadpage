@@ -54,12 +54,12 @@ form.addEventListener('submit', function (e) {
     var name = document.getElementById('name');
     var tel = document.getElementById('tel');
     var email = document.getElementById('email');
-    var message = document.getElementById('message');
+    var message = document.getElementById('msg');
     //var url = "http://37eade17.ngrok.io/main/";
     var method = 'POST';
     var data = JSON.stringify({ name: name.value, tel: tel.value, message: message.value, email: email.value });
     customerUpdater.open(method, form.action, true);
-    customerUpdater.setRequestHeader('Content-Type', 'application/json');
+    customerUpdater.setRequestHeader('Content-Type','application/json');
     customerUpdater.send(data);
     customerUpdater.onload = function () {
 
