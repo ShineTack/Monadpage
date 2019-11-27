@@ -18,4 +18,4 @@ pip install pytelegrambotapi
 python manage.py runserver
 ```
 
-page will be in http://localhost:8000/main/
+page will be in http://localhost:8000/
