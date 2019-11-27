@@ -229,9 +229,9 @@ body p {
 
 .main__discount {
   padding: 234px 25% 144px 84px;
-  background: center / cover no-repeat url(assets/backgrounds/discount.png),
+  background: center no-repeat url(assets/backgrounds/discount.png),
     linear-gradient(142.94deg, #0755CC 0%, #02224D 79.15%);
-  background-size: contain;
+  background-size: cover;
 }
 
 .main__discount h1 {
