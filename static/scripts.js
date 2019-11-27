@@ -77,7 +77,7 @@ function validateForm() {
     }
 
     const msg = form.elements.message;
-    if (msg.value.length > 300) {
+    if (msg.value.length > 250) {
         msg.classList.add('invalid');
     } else {
         validData.msg = msg.value;
