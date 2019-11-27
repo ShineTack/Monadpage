@@ -76,12 +76,12 @@ function validateForm() {
         tel.classList.remove('invalid');
     }
 
-    const msg = form.elements.message;
-    if (msg.value.length > 250) {
-        msg.classList.add('invalid');
+    const message = form.elements.message;
+    if (message.value.length > 250) {
+        message.classList.add('invalid');
     } else {
-        validData.msg = msg.value;
-        msg.classList.remove('invalid');
+        validData.message = message.value;
+        message.classList.remove('invalid');
     }
 
     if (Object.keys(validData).length < 4) {
