@@ -1,7 +1,0 @@
-django
-gunicorn
-django-heroku
-pytelegrambotapi
-whitenoise
-djangorestframework
-drf-extensions
