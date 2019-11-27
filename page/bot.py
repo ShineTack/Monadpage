@@ -16,4 +16,4 @@ Message : {message}
     """
     bot.send_message('-1001385429241', text)
 
-    bot.polling()
+
