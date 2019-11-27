@@ -356,15 +356,10 @@
             </section>
             <section id="contacts" class="section">
                 <h1>Наши контакты</h1>
-
-                <form class="contacts_form" novalidate>
-                    <label for="name"></label>
+                <form name="contacts" class="contacts_form" novalidate>
                     <input name="name" type="text" placeholder="Имя Фамилия Отчество" id="name" />
-                    <label for="email"></label>
                     <input name="email" type="email" placeholder="E-mail" id="email" />
-                    <label for="tel"></label>
                     <input name="tel" type="tel" placeholder="Номер телефона" id="tel" />
-                    <label for="msg"></label>
                     <input name="message" type="text" placeholder="Сообщение" id="msg" />
                     <button type="submit">Отправить сообщение</button>
                 </form>
@@ -381,6 +376,12 @@
                 <div class="contacts__success">
                     <h2>Ваше письмо успешно отправлено!</h2>
                     <p>Ожидайте ответа от нас</p>
+                    <span class="contacts__success__link">Вернуться на главную</span>
+                </div>
+                <div class="contacts__error">
+                    <h2>Что-то пошло не так.</h2>
+                    <p>Повторите попытку позднее.</p>
+                    <p class="contacts__error__status"></p>
                     <span class="contacts__success__link">Вернуться на главную</span>
                 </div>
             </section>

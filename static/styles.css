@@ -541,6 +541,10 @@ body p {
   border-bottom: 2px solid #71E7D6;
 }
 
+#contacts form .invalid {
+  border-bottom: 2px solid orangered;
+}
+
 #contacts form button {
   cursor: pointer;
   width: 100%;
@@ -567,7 +571,8 @@ body p {
   outline: none;
 }
 
-.contacts__success {
+.contacts__success,
+.contacts__error {
   display: none;
   margin: 50px auto 352px auto;
   padding: 54px 60px 47px 60px;
@@ -575,6 +580,10 @@ body p {
   text-align: center;
   border-radius: 50px;
   border: 4px solid #71E7D6;
+}
+
+.contacts__error {
+  border-color: orangered;
 }
 
 .contacts__success h2 {

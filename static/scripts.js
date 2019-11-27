@@ -44,48 +44,83 @@ servicesButtons.forEach(function (button) {
 });
 
 // Contacts form
-const form = document.querySelector('.contacts_form');
+const form = document.forms.contacts;
 const success = document.querySelector('.contacts__success');
+const error = document.querySelector('.contacts__error');
+const errorStatus = document.querySelector('.contacts__error__status');
 
-// Form field validation
-const tel = document.getElementById('tel');
-const email = document.getElementById('email');
-const name = document.getElementById('name');
+function validateForm() {
+    const validData = {};
 
-email.addEventListener("input", function (event) {
-    // Каждый раз, когда пользователь вводит что-либо, мы проверяем,
-    // является ли корректным поле электронной почты.
-    if (email.validity.valid) {
-        // В случае появления сообщения об ошибке, если поле
-        // является корректным, мы удаляем сообщение об ошибке.
-        error.innerHTML = ""; // Сбросить содержимое сообщения
-        error.className = "error"; // Сбросить визуальное состояние сообщения
+    const name = form.elements.name;
+    if (name.value.length > 50) {
+        name.classList.add('invalid');
+    } else {
+        validData.name = name.value;
+        name.classList.remove('invalid');
     }
-}, false);
+
+    const email = form.elements.email;
+    if (!/^.+@.+\..+$/.test(email.value)) {
+        email.classList.add('invalid');
+    } else {
+        validData.email = email.value;
+        email.classList.remove('invalid');
+    }
+
+    const tel = form.elements.tel;
+    if (!/^[\(\)\-\d]+$/.test(tel.value)) {
+        tel.classList.add('invalid');
+    } else {
+        validData.tel = tel.value;
+        tel.classList.remove('invalid');
+    }
+
+    const msg = form.elements.message;
+    if (msg.value.length > 300) {
+        msg.classList.add('invalid');
+    } else {
+        validData.msg = msg.value;
+        msg.classList.remove('invalid');
+    }
+
+    if (Object.keys(validData).length < 4) {
+        return false;
+    }
+
+    return validData;
+}
+
 
 form.addEventListener('submit', function (e) {
     e.preventDefault();
 
-    var customerUpdater = new XMLHttpRequest();
-    var name = document.getElementById('name');
-    var tel = document.getElementById('tel');
-    var email = document.getElementById('email');
-    var message = document.getElementById('msg');
-    //var url = "http://37eade17.ngrok.io/main/";
-    var method = 'POST';
-    var data = JSON.stringify({ name: name.value, tel: tel.value, message: message.value, email: email.value });
-    customerUpdater.open(method, form.action, true);
-    customerUpdater.setRequestHeader('Content-Type', 'application/json');
-    customerUpdater.send(data);
-    customerUpdater.onload = function () {
-        if (customerUpdater.status != 400) {
-            form.style.display = 'none';
-            success.style.display = 'block';
-            setTimeout(function () {
-                form.style.display = 'flex';
-                success.style.display = 'none';
-            }, 5000);
-        };
+    const validData = validateForm();
+
+    if (validData) {
+        const customerUpdater = new XMLHttpRequest();
+        var data = JSON.stringify(validData);
+        customerUpdater.open('POST', form.action, true);
+        customerUpdater.setRequestHeader('Content-Type', 'application/json');
+        customerUpdater.send(data);
+        customerUpdater.onload = function () {
+            if (customerUpdater.status === 200) {
+                form.style.display = 'none';
+                success.style.display = 'block';
+                setTimeout(function () {
+                    form.style.display = 'flex';
+                    success.style.display = 'none';
+                }, 5000);
+            } else {
+                form.style.display = 'none';
+                error.style.display = 'block';
+                errorStatus.textContent = `Статус ошибки: ${customerUpdater.status}`;
+                setTimeout(function () {
+                    form.style.display = 'flex';
+                    error.style.display = 'none';
+                }, 5000);
+            }
+        }
     }
 });
 
