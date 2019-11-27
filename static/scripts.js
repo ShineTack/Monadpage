@@ -47,6 +47,9 @@ servicesButtons.forEach(function (button) {
 const form = document.querySelector('.contacts_form');
 const success = document.querySelector('.contacts__success');
 
+// Form field validation
+
+
 form.addEventListener('submit', function (e) {
     e.preventDefault();
 
@@ -55,14 +58,11 @@ form.addEventListener('submit', function (e) {
     var tel = document.getElementById('tel');
     var email = document.getElementById('email');
     var message = document.getElementById('message');
-    //var url = "http://37eade17.ngrok.io/main/";
-    var method = 'POST';
     var data = JSON.stringify({ name: name.value, tel: tel.value, message: message.value, email: email.value });
-    customerUpdater.open(method, form.action, true);
+    customerUpdater.open('POST', form.action, true);
     customerUpdater.setRequestHeader('Content-Type', 'application/json');
     customerUpdater.send(data);
     customerUpdater.onload = function () {
-
         if (customerUpdater.status != 400) {
             form.style.display = 'none';
             success.style.display = 'block';
