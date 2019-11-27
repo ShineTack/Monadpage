@@ -10,6 +10,7 @@ Python version 3.6.8
 pip install django
 pip install djangorestframework
 pip install drf-extensions
+pip install pytelegrambotapi
 ```
 
 ## Launch
