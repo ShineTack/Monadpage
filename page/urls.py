@@ -4,6 +4,5 @@ from .views import Main
 
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('main/', Main.as_view())
+    path('', Main.as_view())
 ]
