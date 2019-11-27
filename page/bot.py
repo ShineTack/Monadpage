@@ -14,7 +14,6 @@ def repeat(name, phone, email, message):
 Email : {email}
 Message : {message} 
     """
-    bot.polling()
     bot.send_message('-1001385429241', text)
 
 
