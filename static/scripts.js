@@ -48,17 +48,29 @@ const form = document.querySelector('.contacts_form');
 const success = document.querySelector('.contacts__success');
 
 // Form field validation
+const tel = document.getElementById('tel');
+const email = document.getElementById('email');
+const name = document.getElementById('name');
 
+email.addEventListener("input", function (event) {
+    // Каждый раз, когда пользователь вводит что-либо, мы проверяем,
+    // является ли корректным поле электронной почты.
+    if (email.validity.valid) {
+        // В случае появления сообщения об ошибке, если поле
+        // является корректным, мы удаляем сообщение об ошибке.
+        error.innerHTML = ""; // Сбросить содержимое сообщения
+        error.className = "error"; // Сбросить визуальное состояние сообщения
+    }
+}, false);
 
 form.addEventListener('submit', function (e) {
     e.preventDefault();
 
-    var customerUpdater = new XMLHttpRequest();
-    var name = document.getElementById('name');
-    var tel = document.getElementById('tel');
-    var email = document.getElementById('email');
-    var message = document.getElementById('message');
-    var data = JSON.stringify({ name: name.value, tel: tel.value, message: message.value, email: email.value });
+    const customerUpdater = new XMLHttpRequest();
+
+    const message = document.getElementById('message');
+    const data = new FormData(form); //JSON.stringify({ name: name.value, tel: tel.value, message: message.value, email: email.value });
+    console.log('values', data.values());
     customerUpdater.open('POST', form.action, true);
     customerUpdater.setRequestHeader('Content-Type', 'application/json');
     customerUpdater.send(data);
