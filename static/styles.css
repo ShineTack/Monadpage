@@ -99,7 +99,20 @@ i::before {
   text-align: center;
 }
 
-.page__menu__tabs__tab:hover img {
+.page__menu__tabs__tab div {
+  width: 47px;
+  height: 47px;
+  text-align: center;
+  line-height: 40px;
+  border-radius: 50%;
+  border: 2px solid #71E7D6;
+}
+
+.page__menu__tabs__tab div img {
+  display: inline;
+}
+
+.page__menu__tabs__tab:hover div {
   border-radius: 100%;
   box-shadow: 0px 0px 10px #71E7D6;
 }
@@ -543,6 +556,22 @@ body p {
   background: none;
   border: none;
   border-bottom: 2px solid #71E7D6;
+}
+
+#contacts form #name {
+  background: right center no-repeat url(assets/form_name.svg);
+}
+
+#contacts form #email {
+  background: right center no-repeat url(assets/form_email.svg);
+}
+
+#contacts form #tel {
+  background: right center no-repeat url(assets/form_tel.svg);
+}
+
+#contacts form #msg {
+  background: right center no-repeat url(assets/form_msg.svg);
 }
 
 #contacts form .invalid {

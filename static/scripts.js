@@ -53,7 +53,7 @@ function validateForm() {
     const validData = {};
 
     const name = form.elements.name;
-    if (name.value.length > 50) {
+    if (name.value.length > 50 || name.value.length < 3) {
         name.classList.add('invalid');
     } else {
         validData.name = name.value;
