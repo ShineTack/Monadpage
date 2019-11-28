@@ -217,7 +217,7 @@ body p {
 }
 
 .main__together__welcome {
-  padding:155px 84px;
+  padding: 84px 84px 155px;
   text-align: center;
   transform-origin: top center;
   transition: 0.5s;
