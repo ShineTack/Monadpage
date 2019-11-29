@@ -47,7 +47,7 @@ i::before {
 #contacts {
   background: url(assets/backgrounds/star.png) top left -125px no-repeat,
     url(assets/backgrounds/contacts_left.svg) bottom left -125px no-repeat,
-    url(assets/backgrounds/contacts_right.svg) top 150px right no-repeat;
+    url(assets/backgrounds/contacts_right.svg) top 130px right no-repeat;
 }
 
 .page {
@@ -540,10 +540,48 @@ body p {
   opacity: 0.1;
 }
 
+.contacts__header h1 {
+  margin-bottom: 77px;
+}
+
+.contacts__header h2 {
+  margin-top: 23px;
+  font-size: 41px;
+}
+
+.contacts__header img {
+  display: inline;
+  margin-right: 10px;
+}
+
+.contacts__header p {
+  display: inline;
+  margin: 0;
+  font-size: 20px;
+}
+
+.contacts__header div {
+  display: flex;
+}
+
+.contacts__header div:first-of-type {
+  margin-top: 12px;
+  margin-bottom: 23px;
+}
+
+.contacts__header div:nth-of-type(3) {
+  margin-top: 15px;
+}
+
+.contacts__header div:last-of-type {
+  justify-content: center;
+  margin-top: 10px;
+}
+
 #contacts form {
   display: flex;
   flex-direction: column;
-  width: 426px;
+  width: 46%;
   margin: 50px auto;
   padding: 58px 46px 46px 46px;
   border: 4px solid #71E7D6;
@@ -808,6 +846,12 @@ footer {
 
   #carouselExampleIndicators {
     width: 90%;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  #contacts form {
+    width: 60%;
   }
 }
 

@@ -73,7 +73,7 @@
             <div class="page__content__number">
                 <span>+38(99)323-11-97</span>
             </div>
-            <section id="main" class="section">
+            <section id="main" class="section" style="display: none;">
                 <div class="main__together">
                     <div id="main__carousel" class="carousel slide" data-ride="carousel">
                         <div class="carousel-inner">
@@ -364,24 +364,26 @@
                     </div>
                 </div>
             </section>
-            <section id="contacts" class="section" style="display: none;">
-                <h1>Наши контакты</h1>
-                <h2>Звоните нам</h2>
-                <div>
-                    <img src="" alt="">
-                    <span>+38(99)323-11-97</span>
+            <section id="contacts" class="section">
+                <div class="contacts__header">
+                    <h1>Наши контакты</h1>
+                    <h2>Звоните нам</h2>
+                    <div>
+                        <img src="{% static 'assets/menu/contacts.svg' %}" alt="tel">
+                        <p>+38(99)323-11-97</p>
+                    </div>
+                    <div>
+                        <img src="{% static 'assets/clock.svg' %}" alt="time">
+                        <p>Время работы:</p>
+                    </div>
+                    <h2>Пишите нам на</h2>
+                    <div>
+                        <img src="{% static 'assets/email.svg' %}" alt="email">
+                        <p>sales.monadteam@gmail.com</p>
+                    </div>
+                    <h2>Либо отправьте сообщение здесь</h2>
+                    <div><img src="{% static 'assets/about_arrow.png' %}" alt="arrow"></div>
                 </div>
-                <div>
-                    <img src="" alt="">
-                    <span>Время работы:</span>
-                </div>
-                <h2>Пишите нам на</h2>
-                <div>
-                    <img src="" alt="">
-                    <span>sales.monadteam@gmail.com</span>
-                </div>
-                <h2>, либо отправьте сообщение здесь</h2>
-                <div><img src="" alt=""></div>
                 <form name="contacts" class="contacts_form" novalidate>
                     <input name="name" type="text" placeholder="Имя Фамилия Отчество" id="name" />
                     <input name="email" type="email" placeholder="E-mail" id="email" />
