@@ -176,7 +176,7 @@ body p {
 
 .main__together__learn {
   text-align: center;
-  margin-top: 60px;
+  margin-top: 41px;
 }
 
 .main__together__learn p {
@@ -198,18 +198,19 @@ body p {
   opacity: 0;
 }
 
-#main img {
+.learn__trigger img {
+  margin-top: 7px;
   transition: 0.5s;
 }
 
-#main .collapsed img {
+.collapsed .learn__trigger img {
   transform: rotateX(0deg);
   -o-transform: rotateX(0deg);
   -ms-transform: rotateX(0deg);
   -webkit-transform: rotateX(0deg);
 }
 
-#main img {
+.learn__trigger img {
   transform: rotateX(180deg);
   -o-transform: rotateX(180deg);
   -ms-transform: rotateX(180deg);
@@ -217,31 +218,41 @@ body p {
 }
 
 .main__together__welcome {
-  padding: 84px 84px 155px;
+  padding: 0 85px 85px 85px;
   text-align: center;
-  transform-origin: top center;
+  max-height: 2000px;
+  opacity: 1;
   transition: 0.5s;
 }
 
 .collapsed .main__together__welcome {
-  padding: 0;
-  transform: scaleY(0);
+  opacity: 0;
+  max-height: 0;
 }
 
 .main__together__welcome h1 {
   letter-spacing: -1px;
+  font-size: 50px;
+  margin-top: 2px;
+  line-height: 50px;
 }
 
 .main__together__welcome p {
   display: inline-block;
   width: 90%;
-  margin-top: 35px;
+  margin-top: 78px;
   font-size: 22px;
   line-height: 27px;
 }
 
+.main__together__welcome p:first-of-type {
+  font-size: 33px;
+  margin-top: 6px;
+  line-height: 44px;
+}
+
 .main__discount {
-  padding: 234px 25% 144px 84px;
+  padding: 306px 35% 323px 100px;
   background: center no-repeat url(assets/backgrounds/discount.png),
     linear-gradient(142.94deg, #0755CC 0%, #02224D 79.15%);
   background-size: cover;
@@ -250,15 +261,15 @@ body p {
 .main__discount h1 {
   padding: 0;
   width: auto;
-  font-size: 75px;
-  line-height: 90px;
+  font-size: 55px;
+  line-height: 75px;
 }
 
 .main__discount p {
-  padding-top: 27px;
-  font-size: 30px;
-  line-height: 38px;
-  width: 65%;
+  padding-top: 33px;
+  font-size: 22px;
+  line-height: 29px;
+  width: 90%;
 }
 
 .main__discount span {
@@ -267,10 +278,10 @@ body p {
 
 .main__discount__button {
   border: 4px solid white;
+  padding: 20px 84px;
   border-radius: 50px;
-  padding: 18px 80px;
-  margin-top: 21px;
-  font-size: 20px;
+  margin-top: 64px;
+  font-size: 17px;
   background: none;
 }
 
@@ -284,7 +295,12 @@ body p {
 }
 
 .main__advantages {
-  padding: 0 84px;
+  padding: 84px 84px 0px 84px;
+  background: radial-gradient(95.77% 95.77% at 14.07% 5.49%, #2077DB 15.31%, rgba(160, 126, 255, 0.7) 57.58%);
+}
+
+.main__advantages > h1 {
+  font-size: 48px;
 }
 
 .main__advantages__container__first,
@@ -295,44 +311,40 @@ body p {
 
 }
 
-.main__advantages__container__first {
-  margin-top: 89px;
+.main__advantages__container {
+  display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
 }
 
-.main__advantages__container__second {
-  justify-content: space-around;
-  width: 76%;
-  margin: auto;
-}
-
-.main__advantages__container > div > div {
+.main__advantages__container > div {
   display: inline-block;
-  margin-top: 88px;
-  width: 289px;
-  height: 538px;
+  margin-top: 89px;
+  padding: 0px 7px;
+  width: 295px;
+  height: 544px;
   text-align: center;
   vertical-align: top;
   border: 3px solid #71E7D6;
   border-radius: 60px;
 }
 
-.main__advantages__container > div > div h2 {
-  margin: 20px 0 27px;
+.main__advantages__container > div h2 {
+  margin: 24px 0 27px;
   font-weight: bold;
   font-size: 23px;
   line-height: 29px;
   letter-spacing: -1px;
 }
 
-.main__advantages__container > div > div p {
+.main__advantages__container > div p {
   font-size: 16px;
   line-height: 20px;
   width: 265px;
   margin: auto;
 }
 
-.main__advantages__container > div  > div img {
+.main__advantages__container  > div img {
   margin: 34px 0 17px;
   width: 175px;
   height: 175px;
