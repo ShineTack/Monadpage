@@ -41,6 +41,14 @@ mainBottomButton.addEventListener('click', function () {
     menuButtons[1].classList.add('active');
 })
 
+const threepButton = document.querySelector('.main__threep__button');
+
+threepButton.addEventListener('click', function () {
+    clearTabs();
+    tabs[4].style.display = 'block';
+    menuButtons[4].classList.add('active');
+})
+
 // services
 const servicesButtons = document.querySelectorAll('.services__buttons, .main__discount__button');
 

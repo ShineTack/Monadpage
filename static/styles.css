@@ -252,7 +252,8 @@ body p {
 }
 
 .main__discount {
-  padding: 306px 35% 323px 100px;
+  padding: 306px 35% 0 100px;
+  height: 1024px;
   background: center no-repeat url(assets/backgrounds/discount.png),
     linear-gradient(142.94deg, #0755CC 0%, #02224D 79.15%);
   background-size: cover;
@@ -292,6 +293,53 @@ body p {
 
 .main__discount__button:hover {
   box-shadow: 0 0 5px white;
+}
+
+.main__threep {
+  padding: 306px 100px 0 100px;
+  height: 1024px;
+  background: center no-repeat url(assets/backgrounds/discount.png),
+    linear-gradient(142.94deg, #0755CC 0%, #02224D 79.15%);
+  background-size: cover;
+}
+
+.main__threep * {
+  color: #1A1A1A;
+}
+
+.main__threep h1 {
+  padding: 0;
+  width: auto;
+  font-size: 55px;
+  line-height: 75px;
+}
+
+.main__threep p:first-of-type {
+  font-size: 32px;
+  margin-top: 64px;
+}
+
+.main__threep p:last-of-type {
+  width: 47%;
+  margin-top: 50px;
+}
+
+.main__threep__button {
+  border: 4px solid #1A1A1A;
+  padding: 20px 84px;
+  border-radius: 50px;
+  margin-top: 25px;
+  font-size: 17px;
+  background: none;
+}
+
+.main__threep__button:active,
+.main__threep__button:focus {
+  outline: none;
+}
+
+.main__threep__button:hover {
+  box-shadow: 0 0 5px #1A1A1A;
 }
 
 .main__advantages {
