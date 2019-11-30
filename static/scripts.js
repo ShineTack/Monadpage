@@ -32,6 +32,15 @@ arrow.addEventListener('click', function () {
     }
 });
 
+// Main bottom button
+const mainBottomButton = document.querySelector('.main__advantages__services button');
+
+mainBottomButton.addEventListener('click', function () {
+    clearTabs();
+    tabs[1].style.display = 'block';
+    menuButtons[1].classList.add('active');
+})
+
 // services
 const servicesButtons = document.querySelectorAll('.services__buttons, .main__discount__button');
 
